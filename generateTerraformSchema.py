@@ -12,7 +12,7 @@ response = requests.get(schema_url, auth=(API_KEY, API_SECRET))
 response.raise_for_status()
 data = response.json().get("data", {})
 
-schema_change_handling = data.get("schema_change_handling", "ALLOW_ALL")
+schema_change_handling = data.get("schema_change_handling", "BLOCK_ALL")
 schemas_data = data.get("schemas", {})
 
 terraform_schema = {}
